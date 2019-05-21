@@ -15,9 +15,8 @@ int main()
 {
     Container<int>* c = SimpleTree<int>();
 
-//    for(int i = 1; i < 10; i++)
-//        c->insert(i*i);
-    c->insert(-1);
+    for(int i = 1; i < 10; i++)
+        c->insert(i*i);
 
     printf("List after creation:\n");
     c->print();
@@ -28,8 +27,6 @@ int main()
     if(!c->exists(111))
         cout << "Search for value 111: not found" << endl;
 
-    c->remove(0);
-//    c->remove(1);
     c->remove(25);
     cout << "List after deletion of the element:" << endl;
     c->print();
