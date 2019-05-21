@@ -72,15 +72,15 @@ public:
                         }
                     } else {
                         Tree<T>* buf = left;
+                        Tree<T>* buf2 = this;
+                        left->parent = parent;
                         left = nullptr;
                         if(parent->right == this){
-                            delete parent->right;
-                            parent->right = nullptr;
                             parent->right = buf;
+                            delete buf2;
                         } else {
-                            delete parent->left;
-                            parent->left = nullptr;
                             parent->left = buf;
+                            delete buf2;
                         }
                     }
                 } else {
